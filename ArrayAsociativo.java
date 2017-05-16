@@ -73,11 +73,22 @@ public class ArrayAsociativo {
 		}
 	}
 	
-	/*
+	
 	public String getOrElse(String clave, String valorPorDefecto){
-		
+		Nodo iterator = primero;
+		while(iterator != null){
+			if(iterator.clave.equals(clave)){
+				break;
+			}
+			iterator = iterator.sig;
+		}
+		if(iterator == null){
+			return valorPorDefecto;
+		}
+		return iterator.valor;
 	}
 	
+	/*
 	boolean containsKey(String clave){
 		
 	}
