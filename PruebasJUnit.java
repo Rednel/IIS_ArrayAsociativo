@@ -19,6 +19,8 @@ public class PruebasJUnit {
 		System.gc();
 	}
 	
+	// SIZE
+	
 	@Test
 	public void sizeInicial() {
 		array = new ArrayAsociativo();
@@ -30,6 +32,8 @@ public class PruebasJUnit {
 		array = new ArrayAsociativo(new String[]{"Julia","Gamberro"},new String[]{"Alvaro","MagicElyas"});
 		assertEquals(new Integer(2), new Integer(array.size()));
 	}
+	
+	// GET
 	
 	@Rule
 	public ExpectedException excepcion = ExpectedException.none();
@@ -53,5 +57,28 @@ public class PruebasJUnit {
 		array = new ArrayAsociativo(new String[]{"X"},new String[]{"Y"});
 		assertTrue(array.get("Z").equals(""));
 	}
+	
+	// PUT
+	
+	@Test
+	public void setNuevoPar(){
+		array = new ArrayAsociativo();
+		array.put("X","Y");
+		assertTrue(array.get("X").equals("Y"));
+	}
 
+	public void setEnArrayConElem(){
+		array = new ArrayAsociativo(new String[]{"Clave"},new String[]{"Valor"});
+		array.put("Julia", "Alvaro");
+		assertTrue(array.get("Julia").equals("Alvaro"));
+	}
+	
+	public void setYaClaveAlmacenada(){
+		String clave = "Julia";
+		array = new ArrayAsociativo(new String[]{clave},new String[]{"Alvaro"});
+		assertTrue(array.get(clave).equals("Alvaro"));
+		array.put(clave,"Nothing");
+		assertTrue(array.get(clave).equals("Nothing"));
+	}
+	
 }

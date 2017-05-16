@@ -56,11 +56,24 @@ public class ArrayAsociativo {
 		throw new NoSuchElementException("Elemento no encontrado.");
 	}
 	
-	/*
+	
 	public void put(String clave, String valor){
-		
+		Nodo iterator = primero;
+		while(iterator != null){
+			if(iterator.clave.equals(clave)){
+				break;
+			}
+			iterator = iterator.sig;
+		}
+		if(iterator == null){
+			Nodo n = new Nodo(clave,valor,primero);
+			primero = n;	
+		}else{
+			iterator.valor = valor;
+		}
 	}
 	
+	/*
 	public String getOrElse(String clave, String valorPorDefecto){
 		
 	}
