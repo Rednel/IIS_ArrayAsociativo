@@ -99,9 +99,22 @@ public class ArrayAsociativo {
 		return false;
 	}
 	
-	/*
+	
 	public boolean remove(String clave){
-		
-	}*/
+		Nodo iterator = primero;
+		Nodo previous = null;
+		while(iterator != null){
+			if(iterator.clave.equals(clave)){
+				break;
+			}
+			previous = iterator;
+			iterator = iterator.sig;
+		}
+		if(iterator == null){
+			return false;
+		}
+		previous.sig = iterator.sig;
+		return true;
+	}
 	
 }

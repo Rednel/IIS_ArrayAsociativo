@@ -123,4 +123,24 @@ public class PruebasJUnit {
 		assertTrue(array.containsKey("X"));
 	}
 	
+	@Test
+	public void removeArrayVacio(){
+		array = new ArrayAsociativo();
+		assertTrue(array.remove("X") == false);
+	}
+	
+	@Test
+	public void removeArrayContieneKey(){
+		array = new ArrayAsociativo(new String[]{"X","Y"},new String[]{"W","Z"});
+		assertTrue(array.containsKey("X"));
+		assertTrue(array.remove("X"));
+		assertTrue(array.containsKey("X") == false);
+	}
+	
+	@Test
+	public void removeArrayNoContieneKey(){
+		array = new ArrayAsociativo(new String[]{"X","Y"},new String[]{"W","Z"});
+		assertTrue(array.remove("Q") == false);
+	}
+	
 }
