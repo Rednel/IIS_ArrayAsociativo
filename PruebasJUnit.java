@@ -103,4 +103,24 @@ public class PruebasJUnit {
 		assertTrue(array.getOrElse("S", "ValorDefecto").equals("ValorDefecto"));
 	}
 	
+	// CONTAINSKEY
+	
+	@Test
+	public void containsKeyArrayVacio(){
+		array = new ArrayAsociativo();
+		assertTrue(array.containsKey("X") == false);
+	}
+	
+	@Test
+	public void containsKeyArrayNoContiene(){
+		array = new ArrayAsociativo(new String[]{"X","Y"},new String[]{"W","Z"});
+		assertTrue(array.containsKey("Q") == false);
+	}
+	
+	@Test
+	public void containsKeyArrayContiene(){
+		array = new ArrayAsociativo(new String[]{"X","Y"},new String[]{"W","Z"});
+		assertTrue(array.containsKey("X"));
+	}
+	
 }

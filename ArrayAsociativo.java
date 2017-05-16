@@ -88,12 +88,19 @@ public class ArrayAsociativo {
 		return iterator.valor;
 	}
 	
-	/*
-	boolean containsKey(String clave){
-		
+	public boolean containsKey(String clave){
+		Nodo iterator = primero;
+		while(iterator != null){
+			if(iterator.clave.equals(clave)){
+				return true;
+			}
+			iterator = iterator.sig;
+		}
+		return false;
 	}
 	
-	boolean remove(String clave){
+	/*
+	public boolean remove(String clave){
 		
 	}*/
 	
